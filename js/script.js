@@ -4,8 +4,7 @@ const toDoListApp = new Vue ({
   data: {
     // inizializzo l'array che conterrà i list item che vengono generati al click del button
     toDoListArray: [],
-    textInput: "",
-    green: ""
+    textInput: ""
   },
   methods: {
     // funzione che aggiunge, al click del button, il testo inserito come elemento dell'toDoListArray
