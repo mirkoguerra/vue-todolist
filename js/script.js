@@ -18,4 +18,5 @@ const toDoListApp = new Vue ({
     removeToToDoList: function(index){
       this.toDoListArray.splice(index, 1);
     }
+  }
 });
