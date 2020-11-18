@@ -30,22 +30,19 @@
         <div class="input">
         <!-- input text e button -->
           <input type="text" v-model="textInput" name="" value="" placeholder="Nuovo Todo" autocomplete="off">
-
+          <!-- v-model collega il testo che viene inserito alla variabile textInput in Vue -->
           <button type="button" name="button" @click="addToToDoListArray">Aggiungi</button>
         </div>
       </section>
 
       <section class="down">
       <!-- sezione in cui compaiono gli elementi inseriti dall'utente -->
-        <div class="container">
-        <!-- per dare un po' di padding agli elementi che vengono inseriti -->
-          <ul>
-            <li v-for="element in toDoListArray">
-              {{element}}
-              <a href="#">X</a>
-            </li>
-          </ul>
-        </div>
+        <ul>
+          <li v-for="(element, index) in toDoListArray">
+            {{element}}
+            <a href="#" @click="removeToToDoList(index)">X</a>
+          </li>
+        </ul>
       </section>
     </main>
   </body>

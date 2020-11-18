@@ -7,11 +7,16 @@ const toDoListApp = new Vue ({
     textInput: ""
   },
   methods: {
-    // funzione che aggiunge, al click del button, il list item generato al toDoListArray
+    // funzione che aggiunge, al click del button, il testo inserito come elemento dell'toDoListArray
     addToToDoListArray: function(){
       if (this.textInput != ""){
         this.toDoListArray.push(this.textInput);
+        this.textInput = "";
       }
-		}
+		},
+    // funzione che rimuove, al click della X, l'elemento dall'array
+    removeToToDoList: function(index){
+      this.toDoListArray.splice(index, 1);
+    }
   }
 });
