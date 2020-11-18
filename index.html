@@ -29,9 +29,9 @@
 
         <div class="input">
         <!-- input text e button -->
-          <input type="text" name="" value="" placeholder="Nuovo Todo" autocomplete="off">
+          <input type="text" v-model="textInput" name="" value="" placeholder="Nuovo Todo" autocomplete="off">
 
-          <button type="button" name="button">Aggiungi</button>
+          <button type="button" name="button" @click="addToToDoListArray">Aggiungi</button>
         </div>
       </section>
 
@@ -40,12 +40,8 @@
         <div class="container">
         <!-- per dare un po' di padding agli elementi che vengono inseriti -->
           <ul>
-            <li>
-              cane
-              <a href="#">X</a>
-            </li>
-            <li>
-              cane
+            <li v-for="element in toDoListArray">
+              {{element}}
               <a href="#">X</a>
             </li>
           </ul>
