@@ -39,9 +39,9 @@
       <!-- sezione in cui compaiono gli elementi inseriti dall'utente -->
         <ul>
           <li
-          v-for="(element, index) in toDoListArray" @click:"color(index)" v-bind:class="{colored: coloredArray[index]}">
+          v-for="(element, index) in toDoListArray" @click.stop="color(index)" v-bind:class="element.colored ? 'green' : null">
             {{element.text}}
-            <a href="#" @click="removeToToDoList(index)">X</a>
+            <a href="#" @click.stop="removeToToDoList(index)">X</a>
           </li>
         </ul>
       </section>
