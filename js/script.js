@@ -4,6 +4,7 @@ const toDoListApp = new Vue ({
   data: {
     // inizializzo l'array che conterrà i list item che vengono generati al click del button
     toDoListArray: [],
+    coloredArray: [],
     textInput: ""
   },
   methods: {
@@ -12,11 +13,16 @@ const toDoListApp = new Vue ({
       if (this.textInput != ""){
         this.toDoListArray.push(this.textInput);
         this.textInput = "";
+        this.coloredArray.push(false);
       }
 		},
     // funzione che rimuove, al click della X, l'elemento dall'array
     removeToToDoList: function(index){
       this.toDoListArray.splice(index, 1);
+      this.coloredArray.splice(index, 1);
+    },
+    color: function(index){
+      Vue.set(this.coloredArray, index, true);
     }
   }
 });

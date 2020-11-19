@@ -4,6 +4,10 @@
   margin: 0;
   box-sizing: border-box;
 }
+/* HELPER */
+.colored {
+  background-color: lightgreen;
+}
 /* UP */
 main#to-do-list section.up div.title {
   width: 50vw;
